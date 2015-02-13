@@ -12,7 +12,10 @@ var TYPES_FILE = "[\n " + [
 '{ "type": "Psychic", "super_effective": ["Fighting", "Poison"], "not_effective": ["Psychic", "Steel"], "no_effect": "Dark", "weakness": ["Bug", "Ghost", "Dark"], "resistance": ["Fighting", "Psychic"] }',
 '{ "type": "Bug", "super_effective": ["Grass", "Psychic", "Dark"], "not_effective": ["Fire", "Fighting", "Poison", "Flying", "Ghost", "Steel", "Fairy"], "weakness": ["Fire", "Flying", "Rock"], "resistance": ["Grass", "Fighting", "Ground"] }',
 '{ "type": "Rock", "super_effective": ["Fire", "Ice", "Flying", "Bug"], "not_effective": ["Fighting", "Ground", "Steel"], "weakness": ["Water", "Grass", "Fighting", "Ground", "Steel"], "resistance": ["Normal", "Fire", "Poison", "Flying"] '},
-
+'{ "type": "Ghost", "super_effective": ["Psychic", "Ghost"], "not_effective": "Dark", "no_effect": "Normal", "weakness": ["Ghost", "Dark"], "resistance": ["Poison", "Bug"], "immune": ["Normal", "Fighting"] }',
+'{ "type": "Dragon", "super_effective": "Dragon", "not_effective": "Steel", "no_effect": "Fairy", "weakness": ["Ice", "Dragon", "Fairy"], "resistance": ["Fire", "Water", "Grass", "Electric"] }',
+'{ "type": "Dark", "super_effective": ["Pyschic", "Ghost"], "not_effective": ["Fighting", "Dark", "Fairy"], "weakness": ["Fighting", "Bug", "Fairy"], "resistance": ["Ghost", "Dark"], "immune": "Psychic" }',
+'{ "type": "Steel", "super_effective": ["Ice", "Rock", "Fairy"], "not_effective": ["Fire", "Water", "Electric", "Steel"], "weakness": ["Fire", "Fighting", "Ground"], "resistance": ["Noraml", "Grass", "Ice", "Flying", "Psychic", "Bug", "Rock", "Dragon", "Steel", "Fairy"], "immune": "Poison" }',
 '{ "type": "Fairy", "super_effective": ["Fighting", "Dragon", "Dark"], "not_effective": ["Water", "Poison", "Steel"], "weakness": ["Poison", "Steel"], "resistance": ["Fighting", "Bug", "Dark"], "immune": "Dragon" }'
 ].join(",\n  ") + "\n]";
 
