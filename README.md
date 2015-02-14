@@ -9,4 +9,4 @@ Using this code:
   Run filter.js with node, enter a JavaScript statement to return a value.
   
   Example:  Want to know what types are weak to ground and what types are immune to ghost, type:
-              pokemon.weakness == "Ground" || pokemon.immune == "Ghost"
+              \n pokemon.weakness == "Ground" || pokemon.immune == "Ghost"
