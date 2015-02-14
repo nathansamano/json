@@ -8,9 +8,14 @@ function filter(arr, test) {
   for (var i = 0; i < arr.length; i++) {
     if (test(arr[i])) {
       // code to go through the values of arrays
-      if (test(arr[i])) {
-        console.log(arr[1].weakness);  // <-- here's the syntax to get at array
+      if (test(arr[i]) && typeof(arr[i].weakness) == 'object') {
+        console.log("RECOGNIZES OBJECT");
+	// push the whole array
+	for (var j = 0; j < arr[i].weakness.length; j++) {
+          passed.push(arr[i].weakness[j]);
+	}
       }
+        console.log(arr[1].weakness + test(arr[i]));  // <-- here's the syntax to get at array
         passed.push(arr[i]);
     }
   }
