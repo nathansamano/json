@@ -3,28 +3,23 @@
 var data = require('./types.js');
 var types = JSON.parse(data);
 
-function filter(arr, type) {
+function filter(arr, test) {
   var passed = [];
   for (var i = 0; i < arr.length; i++) {
-    if (type(arr[i]))
-      passed.push(type[i]);
+    if (test(arr[i]))
+      passed.push(arr[i]);
   }
   return passed;
 }
 
-// get the whole entry where type is Fire (I know this is wrong)
-var getFire = types.filter(function(field) {
-  if (field == "Fire")
-    return types.field;
-});
+// print fire
+console.log(filter(types, function(item) {
+  return item.type == "Fire";
+}));
 
-// print out one entry
-console.log(JSON.stringify(filter(types, function(key) {
-  return key.type == "Fire";
-})));
 
-console.log(types[1]);       // prints entire fire entry
-console.log(types[1].type);  // <------ HERE LIES THE ANSWER TO MY PROBLEM
+//console.log(types[1]);       // prints entire fire entry
+//console.log(types[1].type);  // <------ HERE LIES THE ANSWER TO MY PROBLEM
 
 // Solve not using the filter function
 for (var i = 0; i < types.length; i++) {
@@ -32,5 +27,6 @@ for (var i = 0; i < types.length; i++) {
     console.log(types[i]);
 }
 
+
+
 //console.log(types);    // prints everything
-//console.log(getFire);  // supposed to print the line where type == "Fire"
