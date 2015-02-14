@@ -13,10 +13,11 @@ function filter(arr, test) {
 }
 
 // print fire
-console.log(filter(types, function(item) {
-  return item.type == "Fire";
-}));
-
+function filterlicious(arg) {
+  console.log(filter(types, function(item) {
+    return arg;
+  }));
+}
 
 //console.log(types[1]);       // prints entire fire entry
 //console.log(types[1].type);  // <------ HERE LIES THE ANSWER TO MY PROBLEM
@@ -27,6 +28,7 @@ for (var i = 0; i < types.length; i++) {
     console.log(types[i]);
 }
 
+console.log('\nExample: item.type == "Fire"\n');
 
 // sexy input your own filter using node
 var readline = require('readline');
@@ -39,6 +41,9 @@ var rl = readline.createInterface({
 rl.question("Apply a filter using JavaScript syntax: ", function(answer) {
   // Log answer
   console.log("Here's you filter:", answer);
+
+  // Here comes the magic, send input as parameter for filter
+  filterlicious(answer);
 
   rl.close();
 });
