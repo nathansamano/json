@@ -19,9 +19,11 @@ var getFire = types.filter(function(field) {
 });
 
 // print out one entry
-/*console.log(JSON.stringify(filter(types, function(key) {
+console.log(JSON.stringify(filter(types, function(key) {
   return key.type == "Fire";
-})));*/
+})));
 
-console.log(types);    // prints everything
-console.log(getFire);  // supposed to print the line where type == "Fire"
+console.log(types[1].type);  // <------ HERE LIES THE ANSWER TO MY PROBLEM
+
+//console.log(types);    // prints everything
+//console.log(getFire);  // supposed to print the line where type == "Fire"
