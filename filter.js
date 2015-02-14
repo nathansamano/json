@@ -28,5 +28,19 @@ for (var i = 0; i < types.length; i++) {
 }
 
 
+// sexy input your own filter using node
+var readline = require('readline');
+
+var rl = readline.createInterface({
+  input:  process.stdin,
+  output: process.stdout
+});
+
+rl.question("Apply a filter using JavaScript syntax: ", function(answer) {
+  // Log answer
+  console.log("Here's you filter:", answer);
+
+  rl.close();
+});
 
 //console.log(types);    // prints everything
