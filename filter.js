@@ -23,7 +23,14 @@ console.log(JSON.stringify(filter(types, function(key) {
   return key.type == "Fire";
 })));
 
+console.log(types[1]);       // prints entire fire entry
 console.log(types[1].type);  // <------ HERE LIES THE ANSWER TO MY PROBLEM
+
+// Solve not using the filter function
+for (var i = 0; i < types.length; i++) {
+  if (types[i].type == "Fire")
+    console.log(types[i]);
+}
 
 //console.log(types);    // prints everything
 //console.log(getFire);  // supposed to print the line where type == "Fire"
