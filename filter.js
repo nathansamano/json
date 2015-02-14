@@ -6,8 +6,13 @@ var types = JSON.parse(data);
 function filter(arr, test) {
   var passed = [];
   for (var i = 0; i < arr.length; i++) {
-    if (test(arr[i]))
-      passed.push(arr[i]);
+    if (test(arr[i])) {
+      // code to go through the values of arrays
+      if (test(arr[i])) {
+        console.log(arr[1].weakness);  // <-- here's the syntax to get at array
+      }
+        passed.push(arr[i]);
+    }
   }
   return passed;
 }
@@ -15,7 +20,7 @@ function filter(arr, test) {
 // print from data with user specified filter(s)
 function filterlicious(arg) {
   console.log(filter(types, function(pokemon) {
-    return eval(arg); // eval() evaluates a string for execution
+    return eval(arg); // eval() evaluates a string for script execution
   }));
 }
 
@@ -24,7 +29,7 @@ function filterlicious(arg) {
 
 console.log('\nExample: pokemon.type == "Fire"\n');
 
-// sexy input your own filter using node
+// sexy input your own filter using node; nodejs.org/api/readline.html
 var readline = require('readline');
 
 var rl = readline.createInterface({
@@ -33,10 +38,10 @@ var rl = readline.createInterface({
 });
 
 rl.question("Apply a filter using JavaScript syntax: ", function(answer) {
-  // Log answer
+  // Log answer to be sure what is being passed
   console.log("Here's you filter:", answer);
 
-  // Here comes the magic, send input as parameter for filter
+  // Here comes the magic, send input as parameter for filter..waitforit..licious
   filterlicious(answer);
 
   rl.close();
