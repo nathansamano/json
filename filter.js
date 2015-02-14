@@ -1,4 +1,4 @@
-// filter code for json project
+// filter code for json project using node
 
 var data = require('./types.js');
 var types = JSON.parse(data);
@@ -12,23 +12,17 @@ function filter(arr, test) {
   return passed;
 }
 
-// print fire
+// print from data with user specified filter(s)
 function filterlicious(arg) {
-  console.log(filter(types, function(item) {
-    return arg;
+  console.log(filter(types, function(pokemon) {
+    return eval(arg); // eval() evaluates a string for execution
   }));
 }
 
-//console.log(types[1]);       // prints entire fire entry
-//console.log(types[1].type);  // <------ HERE LIES THE ANSWER TO MY PROBLEM
+// test to make sure function works properly, it does
+//filterlicious('pokemon.type == "Fire"');
 
-// Solve not using the filter function
-for (var i = 0; i < types.length; i++) {
-  if (types[i].type == "Fire")
-    console.log(types[i]);
-}
-
-console.log('\nExample: item.type == "Fire"\n');
+console.log('\nExample: pokemon.type == "Fire"\n');
 
 // sexy input your own filter using node
 var readline = require('readline');
