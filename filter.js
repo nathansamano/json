@@ -71,6 +71,8 @@ var reprompt = function() {
     else
       reprompt();
   });
+  // prints right after very first prompt not waiting for user to enter their script
+ // console.log("Testing to see if this prints before or after reprompting");
 };reprompt(); // this is so it calls it the first time & wont' execute once rl closes
 
 //console.log(types);    // prints everything
