@@ -8,7 +8,7 @@ function filter(arr, test) {
   for (var i = 0; i < arr.length; i++) {
     if (test(arr[i])) {
       // code to go through the values of arrays
-      if (test(arr[i]) && typeof(arr[i].weakness) == 'object') {
+/*      if (test(arr[i]) && typeof(arr[i].weakness) == 'object') {
         console.log("RECOGNIZES OBJECT");
 	// push the whole array
 //	for (var j = 0; j < arr[i].weakness.length; j++) {
@@ -16,7 +16,7 @@ function filter(arr, test) {
 //	}
       }
         console.log(arr[1].weakness + test(arr[i]));  // <-- here's the syntax to get at array
-        passed.push(arr[i]);
+*/        passed.push(arr[i]);
     }
   }
   return passed;
@@ -55,13 +55,22 @@ var rl = readline.createInterface({
   input:  process.stdin,
   output: process.stdout
 });
-rl.question("Apply a filter using JavaScript syntax: ", function(answer) {
-  // Log answer to be sure what is being passed
-  console.log("Here's you filter:", answer);
 
-  // Here comes the magic, send input as parameter for filter..waitforit..licious
-  filterlicious(answer);
-  rl.close();
-});
+// Give the ability to run command after command
+var reprompt = function() {
+	                         /* This part here is a callback v */
+  rl.question("Apply a filter using JavaScript syntax: ", function(answer) {
+    // Log answer to be sure what is being passed
+    console.log("Here's you filter:", answer);
+
+    // Here comes the magic, send input as parameter for filter..waitforit..licious
+    filterlicious(answer);
+    if (answer == "exit")
+      rl.close();
+    // start back up at reprompt and do it again
+    else
+      reprompt();
+  });
+};reprompt(); // this is so it calls it the first time & wont' execute once rl closes
 
 //console.log(types);    // prints everything
