@@ -10,3 +10,5 @@ Using this code:
   
   Example:  Want to know what types are weak to ground and what types are immune to ghost, type:
               pokemon.weakness == "Ground" || pokemon.immune == "Ghost"
+
+Running reduce.js says whether or not there is a type weak to "Ground" and prints the entry if true or 'none' if false.
